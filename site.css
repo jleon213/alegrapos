@@ -239,14 +239,24 @@ tr:hover{background-color: #3f918a}
     border: none;
 }
 #addClient{
-    margin: 5px;
-    background-color: #008677; 
+    width: 130px;
+    height: 40px;
+    padding:5px;
+
+    background-color: #008e79; 
     text-transform: uppercase;
-    color: white;
-    width: 110px;
+    color: #fff;
+    
     border-radius: 4px;
     cursor: pointer;
+
+    transition:all .5s;
 }
+
+#addClient:hover{
+    background-color:#bfcd31;
+}
+
 #searchbtn {
     /*    background-image: url('searchBtn.png');
         border: none;
@@ -264,7 +274,7 @@ tr:hover{background-color: #3f918a}
     height:40px;
     padding:5px;
     font-size:13px;
-    background:url(busqueda.png) no-repeat center #008677;
+    background:url(busqueda.png) no-repeat center #008e79;
     background-size:60%;
     border-radius:0 8px 8px 0;
 
@@ -619,7 +629,7 @@ ul {
 	height:35px;
 	margin-bottom:8px;
 	border-radius:3px;
-	background:#008677;
+	background:#008e79;
 	color:#fff;
 	padding:5px 5px 5px 40px;
 	width:157px;
@@ -628,11 +638,11 @@ ul {
 }
 
 #user{
-    background: url(http://alegra.co/diseno/assets-img/usuario-icon.png)#008677 no-repeat 10px; 
+    background: url(http://alegra.co/diseno/assets-img/usuario-icon.png)#008e79 no-repeat 10px; 
     background-size:  auto 60%;
 }
 #password{
-    background: url(http://alegra.co/diseno/assets-img/password-icon.png) #008677 no-repeat 10px;
+    background: url(http://alegra.co/diseno/assets-img/password-icon.png) #008e79 no-repeat 10px;
     background-size: auto 60%;
 }
 #user:focus, #password:focus{
