@@ -590,9 +590,8 @@ ul {
     border: 1px solid black;
 }
 .login{
-    display: none;
+    /* display: none; */
     z-index: 1;
-        
     position:absolute;
     width: 250px;
     height: 160px;
@@ -601,16 +600,13 @@ ul {
     margin-top:-134px;
     margin-left:-125px;
     padding: 110px 30px 30px 30px;
-    
     background: #00b19d;
     background-image: url(logo-alegra-login.png);
     background-position-y: 35px;
     background-position-x: center;
     background-repeat: no-repeat;
-    
     text-align:center;
-    
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 .login input {
     font-size:12px;
@@ -643,7 +639,27 @@ ul {
     margin: auto;
     text-align: center;
     bottom: 0px;
+    color:#fff;
 }
+
+#logIncorrect{
+    /*posición alerta*/
+    position:absolute;
+    left:50%;
+    margin-left:-115px;
+    top:271px;
+    width:230px;
+    
+    background:#e96f53;
+    
+    font-size:11px;
+    font-weight:bold;
+    line-heigh:100%;
+    padding-top:8px;
+
+    border-radius:8px 8px 0px 0px;
+}
+
 #logout{
     color: white;
     font-size: 12px;
