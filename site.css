@@ -45,34 +45,38 @@ input {
     height: 100px;
 }
 .PosBtn {
-    background-color: #3f918a;
+    background-color: #00b19d;
     background-image: url('negocio.png');
     background-repeat: no-repeat;
-    background-size: 65px;
+    background-size: 50%;
     background-position: center;
     display:inline-block;
     cursor:pointer;
+    transition:all .5s;
 }
 .grafBtn{
-    background-color: #00b796;
+    background-color: #00535e;
     background-image: url('informes.png');
     background-repeat: no-repeat;
-    background-size: 65px;
+    background-size: 50%;
     background-position: center;
     display:inline-block;
     cursor:pointer;
 }
 .configBtn{
-    background-color: #00b796;
+    background-color: #00535e;
     background-image: url('configuracion.png');
     background-repeat: no-repeat;
-    background-size: 65px;
+    background-size: 50%;
     background-position:  center;
     display:inline-block;
     cursor:pointer;
+
+    transition: all .5s;
 }
 .PosBtn:hover, .configBtn:hover, .grafBtn:hover{
     background-color: #bed03b; 
+    opacity: 1;
 }
 h1{
     font-size:24px;
