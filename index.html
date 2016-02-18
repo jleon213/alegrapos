@@ -1,0 +1,332 @@
+<html>
+    <head> 
+        <script src="/js/app/Pos.js"></script>
+        <script src="/js/app/Invoice.js"></script>
+        <script src="/js/app/Item.js"></script>
+        <script src="/js/app/ItemSold.js"></script>
+        <script src="/js/app/Tax.js"></script>
+        <script src="/js/app/Client.js"></script>
+        <script src="/js/app/numberTemplate.js"></script>
+        <script src="/js/app/Search.js"></script>
+        <script src="/js/app/Price.js"></script>   
+        <script src="/js/app/SavedInvoice.js"></script>
+        <script src="/js/app/SyncTaxes.js"></script>
+        <script src="/js/app/Company.js"></script>
+        <script src="/js/app/NextInvoice.js"></script>
+        <script src="/js/app/SyncItems.js"></script>
+        <script src="/js/app/Payment.js"></script>
+        <script src="/js/app/SyncInvoice.js"></script>
+        <script src="/js/app/StoreInvoice.js"></script>
+        <script src="/js/app/SyncClients.js"></script>
+        <script src="/js/app/CreateClient.js"></script>
+        <script src="/js/app/SyncCompany.js"></script>
+        <script src="/js/app/Sales.js"></script>
+        <script src="/js/app/Bank.js"></script>
+        <script src="/js/app/Returns.js"></script>
+        <script src="/js/app/BankAccount.js"></script>
+        <script src="/js/app/SyncBanks.js"></script>
+       <script src="/js/app/Login.js"></script>
+    </head>
+    <!--<body onload="process()">-->
+    <body>
+        <div class="login">  
+            <p id="logIncorrect" style="display: none">Usuario o Contraseña incorrecto</p>
+            <p id="logRequired" style="display: none">Usuario y Contraseña obligatorios</p>
+          <form>
+            <input id="user" type="text"><br>
+             
+            <input id="password" type="password"><br>
+           
+            <input id="autenticar" type="button" value="Ingresar"><br> 
+             </form>
+        </div>    
+
+
+        <div class="POS">
+            <div class="margen">
+                <ul>
+                    <li class="PosBtn"></li>
+<!--                    <li class="grafBtn"></li>-->
+                    <li class="configBtn"></li>
+              
+                </ul>    
+                
+                <p id="logout">SALIR</p>
+                <!--input id="PosBtn" type="button"><br> 
+                <input id="configBtn" type="button"><br-->
+            </div> 
+
+
+            <div class="topProduct">
+                <div id="topProductMenu">
+                    <ul style="display: none">
+                        <li id="NavProductos" class="active">PRODUCTOS</li>
+                        <li id="NavCategory">CATEGORÍA</li>
+                    </ul>
+                    <br>
+                </div>
+                <br>
+                <div class="search"> 
+                    <br>
+                    
+                        <br>
+                        <input id="searchClient" type="text" placeholder="Busca Clientes"
+                               autocomplete="off" onkeyup="search.searchResultsClient(this.value)"
+                               ><input id="searchbtn" type="button"
+                               ><input id="addClient" type="button" 
+                               value="Crear Cliente"> <br>
+                        <div id='searchResults'>
+                            <br>
+                            <ul id="searchInput"></ul>
+                           
+                        </div>
+                        <br>
+                    
+                </div> 
+                <div class="client"></div>    
+
+                <div class="search">    
+                    
+                        <input id="searchText" type="text" placeholder="Busca Productos"
+                               onkeyup="search.searchResults(this.value)"
+                               ><input id="searchbtn" type="button"> 
+                    <br>
+                </div>
+
+<!--           <input id="Sync" type="button" value="Sincronizar" >-->
+            </div>
+            <!--            <div class="bank" style="display: none">
+                            <input id="openBank" type="button" value="Abrir">
+                            <div id="openPopUp"></div>
+                            <input id="closeBank" type="button" value="Cerrar">
+                            <div id="closePopUp"></div>
+                            <br>
+                        </div>  -->
+
+            <!--            <div class="returns" style="display: none">
+                            <input id="returns" type="button" value="Devoluciones">
+                            <div id="returnsPopUp">
+                                <p>Digite el prefijo de la factura a devolver</p>
+                                <input id="returnPrefix" type="text">
+                                <p>Digite el número de la factura a devolver</p>
+                                <input id="returnNumber" type="text"><br>
+                            </div>
+                        </div>-->
+
+            <!--            <div class="consultas" style="display: none">
+                            <input id="consultarAnteriores" type="button" 
+                                   value="Consultar Ventas">
+                            <br>
+                        </div>      -->
+
+            <div class="producto"></div>
+
+
+            <div class="ticket"><p id="ticketTitle">TICKET</p>
+                <div id="TicketProd">
+                    <p class="pclient"></p>
+                    <!--input id="saveBtn" type="button" value="Guardar" >
+                    <input class="printBtn" type="button" value="Imprimir"--> 
+                    <ul id="list"></ul>
+                    <table id="table"></table>
+                    <div id="descuentoTotal" style="display: none">
+                        <p id="descuentoTotalP">Descuento</p><input 
+                            id="descuentoTotalNum" type="text" name="descuentoTot" 
+                            size="3" placeholder="%">
+                    </div>
+                </div>
+                <div id="ticketTotal">
+                    <div id="off"></div>
+                    <div class="total">
+                        <p class="total"><br><br></p><br><br>	
+                        <!--<div id ='taxesdiv'> </div>-->
+                        <!--<ul id="taxes"></ul>-->
+                        <ul id="taxes"></ul><br>
+
+                        <div id="divTotalTitle"><br><br></div>
+                        <p id="totalTitle">TOTAL:<br><br></p>
+
+
+                        <p id="totalNum"><br></p><br><br><br>
+                    </div>
+                    <br><br>
+                    <br><br><br><br><input id="cancelSaleBtn" type="button" value="CANCELAR">  
+                    <input class="payBtn" type="button" value="VENDER" ><br>
+                </div>
+                <div id="payPopUp" style="display: none;">
+                    <p>Total<p><p class="total"></p>	
+                    <select id="select1">
+                        <option selected value="cash">Efectivo</option>
+                        <option value="credit-card">Crédito</option>
+                        <option value="debit-card">Debito</option>
+                    </select>
+                    <input class="inputTotal" type="text" placeholder="0"><br>
+                    <select id="select2">
+                        <option  value="cash">Efectivo</option>
+                        <option selected value="credit-card">Crédito</option>
+                        <option value="debit-card">Debito</option>
+                    </select>
+                    <input class="inputTotal" type="text" placeholder="0"><br>
+                    <select id="select3">
+                        <option value="cash">Efectivo</option>
+                        <option value="credit-card">Crédito</option>
+                        <option selected value="debit-card">Debito</option>
+                    </select>
+                    <input class="inputTotal" type="text" placeholder="0"><br>
+                    <p>Cambio</p>
+                    <p class="change"></p>
+                    <input  id="cancelBtn" type="button" value="CANCELAR">
+                    <input  class="payBtn" type="button" value="VENDER">
+                </div>    
+
+                <div id="payConfirmPopUp" style="display: none;">
+                    <p>Gracias por su compra</p>
+                    <p class="numero"></p>
+                    <input class="printBtn" type="button" value="Imprimir">
+                    <input class="closeBtn" type="button" value="Cerrar">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="ConfigMenu">
+            <div class="margen" style="display: none">
+                <ul>
+                    <li class="PosBtn"></li>
+<!--                    <li class="grafBtn"></li>-->
+                    <li class="configBtn"></li>
+                </ul>
+            </div>
+
+            <div id="configDiv">
+                <div class="consultas" style="display: none">
+                    <input id="consultarAnteriores" type="button" 
+                           value="Consultar Ventas">
+                </div> 
+                <br>
+                <div class="returns" style="display: none">
+                    <input id="returns" type="button" value="Devoluciones">
+                    <div id="returnsPopUp">
+                        <p>Digite el prefijo de la factura a devolver</p>
+                        <input id="returnPrefix" type="text">
+                        <p>Digite el número de la factura a devolver</p>
+                        <input id="returnNumber" type="text"><br>
+                    </div>
+                </div>
+                <br>
+                <div class="bank" style="display: none">
+                    <input id="openBank" type="button" value="Abrir">
+                    <div id="openPopUp"></div>
+                    <input id="closeBank" type="button" value="Cerrar">
+                    <div id="closePopUp"></div>
+                    <br>
+                    <input id="viewBank" type="button" value="Consultar Caja">
+                    <div id="viewPopUP"></div>
+                    <input id="viewOldBank"type="button" 
+                           value="Consultar Cajas Anteriores">
+                    <div id="viewOldPopUp"></div>
+                </div>  
+                <br>
+                <h1 id="confBank">Asociar tipos de pago a bancos</h1>
+                <div id="confBankPopUp">
+                    <p>Efectivo <select id="bankCash"></select></p><br>
+                    <p>Crédito <select id="bankCredit"></select></p><br>
+                    <p>Debito <select id="bankDebit"></select></p><br>
+                    <br><br>
+                </div>
+                <br>
+                <div class="resolutions" style="display: none">
+                    <h1 id="confResolution">Configurar Resoluciones</h1>
+                    <div id="divRes"></div>
+                </div>
+                <br>
+                <input id="closeConfig" type="button" value="GUARDAR">
+            </div>
+        </div>
+
+        <div id="noInvoiceId" style="display:none">
+            <p>No tienes una numeración automatica en Alegra
+                Por favor crea una antes de utilizar el POS</p>
+                <!--<input id="closeNoInvoice" type="button" value="Cerrar">-->
+        </div>
+        <div id="editPopUp" style="display: none;">
+            <form id="formEdit" name="formEdit" action="Ticket.editItem()">
+                <br><p id="editarVenta">EDITAR VENTA</p><br>
+                <input  id="closeBtn" type="button" value="X">
+                <input id="name" type="text" name="name">
+                <input id="price" type="text" name="price">
+                <input id="amount" type="text" name="amount" size="3">
+                <select id="tax" type="text" name="tax"></select>
+                <input id="descuentoItem" type="text" name="descuentoItem" 
+                       size="5" placeholder="dcto%">
+                <input  id="submitBtn" type="button"><br>
+                <br><input id="eliminarVenta" type="button" value="ELIMINAR PRODUCTO">
+            </form> 
+        </div>
+        <div id="newClient" style="display: none">
+            <h1>CREAR CLIENTE:</h1><br>
+            <label for="clientName">Nombre:</label> <input id="clientName" type="text" required><br>
+            <label for="clientId">ID:</label> <input id="clientId" type="text"><br>
+            <label for="clientAddress">Dirección:</label> <input id="clientAddress" type="text"><br>
+            <label for="clientCity">Ciudad:</label> <input id="clientCity" type="text"><br>
+            <label for="clientEmail">Correo:</label> <input id ="clientEmail" type="text"><br>
+            <label for="clientPhone">Telefono:</label> <input id="clientPhone" type="text"><br>
+            <br><input id="submitClient" type="button" value="ACEPTAR">
+            <input id='closeClient' type="button" value="Cerrar">
+        </div>
+        <!--<div class="consultasAnt" style="display: none;"-->
+        <div id="ventasAnteriores" style="display: none">
+            <h3>Ventas Anteriores</h3>
+            <ul id="salesList">
+
+            </ul>
+        </div>
+        <!--input id="return" type="button" value="Volver a POS"--> 
+        <div class="ticket" style="display: none;"></div>
+        <!--/div>    -->
+
+        <script type="text/javascript">
+          //  var pos = new Pos();
+            var item = new Item();
+            var invoice = new Invoice();
+            var price = new Price();
+            var search = new Search();
+            var sales = new Sales();
+            var bank = new Bank();
+            var returns = new Returns();
+            var newClients = new createClient();
+            //storeInvoice();
+            login();
+            logout();
+           // pos.setMenu();
+    
+       
+            
+           // login();
+//            syncCompany();
+//            storeInvoiceAPI();
+//            syncClients();
+//            syncBankAccounts();
+//            sync();
+            //pos.syncRenderItems();
+            var canvas = document.getElementsByClassName('producto');
+            var producto = document.getElementById('producto');
+                
+            // var items = pos.getItems();
+            // pos.renderItems(canvas, items);
+            //pos.  pos.syncItems(canvas);
+            var canvasClient = document.getElementsByClassName('client');
+            var clients = pos.getClients();
+            //sales.renderSales();
+            //bank.openBank();
+            //bank.closeBank();
+            //bank.viewBank();
+            //bank.viewOldBanks();
+            //returns.makeReturn();
+//            pos.configNumberTemplate();
+//            pos.confBanks();
+//            pos.getCompany();
+        </script>
+    </body>
+
+</html>
