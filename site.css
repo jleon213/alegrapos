@@ -1,3 +1,103 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Trendy Mail with screen readers
+Jeff
+1
+Search
+
+
+
+Mail
+COMPOSE
+Labels
+Inbox (28)
+Starred
+Important
+Sent Mail
+Drafts (1)
+Spam (35)
+Circles
+[Gmail]/Sent Mail/Esteban Ingeniero
+[Imap]/Drafts (1)
+[Imap]/Trash
+Deleted Messages
+Follow up
+INBOX/2013 Citas inSer
+INBOX/2013 Consulta virtual inser
+INBOX/Actiontrax
+INBOX/Alcaldia
+INBOX/Asomercadeo
+INBOX/Colegiatura
+INBOX/Coursera
+INBOX/ECigs
+INBOX/Elegant Themes
+INBOX/email@wearetrendy.com
+INBOX/Godaddy
+INBOX/Ingeniero
+INBOX/Interficto
+INBOX/Lady Benten
+INBOX/Leonisa
+INBOX/Mighty Deals
+INBOX/Muma
+INBOX/PG Advertising
+INBOX/PXL Art
+INBOX/Solio
+INBOX/Tread
+INBOX/Wetransfer
+INBOX/Wordpress
+Junk E-mail
+Misc
+Notes
+Priority
+Sent Messages
+More labels 
+Hangouts
+
+ 
+ 
+ 
+  More 
+4 of 4,113  
+ 
+Print all In new window
+Nuevos Archivos
+Inbox
+x 
+
+Adriana Escobar
+Attachments11:03 AM (29 minutes ago)
+
+to me 
+2 Attachments 
+ 
+Preview attachment site.css
+
+Style Sheet
+site.css
+Preview attachment index.phtml
+
+Text
+index.phtml
+	
+Click here to Reply or Forward
+88.44 GB (88%) of 100 GB used
+Manage
+Program Policies
+Powered by Google
+Last account activity: 12 minutes ago
+Details
+Adriana Escobar's profile photo
+Adriana Escobar
+Add to circles
+
+Recent photos
+View photo in messageView photo in messageView photo in message
+Show details
+
+
+
 html, body {
     max-width: 100%;
     max-height: 100%;
@@ -45,38 +145,34 @@ input {
     height: 100px;
 }
 .PosBtn {
-    background-color: #00b19d;
+    background-color: #3f918a;
     background-image: url('negocio.png');
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 65px;
     background-position: center;
     display:inline-block;
     cursor:pointer;
-    transition:all .5s;
 }
 .grafBtn{
-    background-color: #00535e;
+    background-color: #00b796;
     background-image: url('informes.png');
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 65px;
     background-position: center;
     display:inline-block;
     cursor:pointer;
 }
 .configBtn{
-    background-color: #00535e;
+    background-color: #00b796;
     background-image: url('configuracion.png');
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 65px;
     background-position:  center;
     display:inline-block;
     cursor:pointer;
-
-    transition: all .5s;
 }
 .PosBtn:hover, .configBtn:hover, .grafBtn:hover{
     background-color: #bed03b; 
-    opacity: 1;
 }
 h1{
     font-size:24px;
@@ -200,6 +296,11 @@ tr:hover{background-color: #3f918a}
     top: 0px;
     overflow-y: scroll; 
 }
+#taxes {
+    float: right;
+    display: block;
+    color:  #58595f;
+}
 #ticketTotal {
     display: block;
     // height: 432px;
@@ -239,46 +340,35 @@ tr:hover{background-color: #3f918a}
     border: none;
 }
 #addClient{
-    width: 130px;
-    height: 40px;
-    padding:5px;
-
-    background-color: #008e79; 
+    margin: 5px;
+    background-color: #008677; 
     text-transform: uppercase;
-    color: #fff;
-    
+    color: white;
+    width: 110px;
     border-radius: 4px;
     cursor: pointer;
-
-    transition:all .5s;
 }
-
-#addClient:hover{
-    background-color:#bfcd31;
-}
-
 #searchbtn {
-    
+    /*    background-image: url('searchBtn.png');
+        border: none;
+        margin-left: 0px;
+        background-size: 100% 100%;
+        position: relative;
+        display:inline;
+        height: 25px;
+        width: 30px; */
+    border: none;
     display:block;
+    float:left;
+    margin:0 0 0 -5px;
     width:40px;
     height:40px;
     padding:5px;
-    margin:0 0 0 -5px;
-    float:left;
-    
-    border: none;
-       
-    background:url(busqueda.png) no-repeat center #008e79;
+    font-size:13px;
+    background:url(busqueda.png) no-repeat center #008677;
     background-size:60%;
     border-radius:0 8px 8px 0;
-    
-    transition:all .3s;
 
-    cursor:pointer;
-}
-
-#searchbtn:hover{
-    background-color:#00535e;
 }
 
 #newClient{
@@ -391,6 +481,7 @@ ul {
 #off {
     padding-top: 15px;
     border-top: 3px solid #bde3dc; 
+    margin-top: 40px; /* SE ELIMINA CUNADO ESTE HABILITADO DESCUENTO*/
 }
 .total p {
     position: relative;
@@ -406,7 +497,10 @@ ul {
     width: 90%;   
 }
 #divTotalTitle {
+    position: relative;
+    display: block;
     margin-left: 25px;
+    margin-top: 45px; 
     border-bottom: 2px solid #90909a; 
 }
 #totalTitle {
@@ -415,7 +509,7 @@ ul {
     font-weight: lighter; 
     float: left;
     color: #424242;
-    margin-left: 5%;
+    margin-left: -55%;
     font-size: 25px;
 }
 #totalNum{
@@ -424,6 +518,7 @@ ul {
     color: #424242;
     float: left;
     margin-left: 5%;
+    position: initial;
 }
 .producto p {
     display: inline-block;
@@ -605,8 +700,9 @@ ul {
     border: 1px solid black;
 }
 .login{
-    /* display: none; */
+    display: none;
     z-index: 1;
+        
     position:absolute;
     width: 250px;
     height: 160px;
@@ -615,13 +711,16 @@ ul {
     margin-top:-134px;
     margin-left:-125px;
     padding: 110px 30px 30px 30px;
+    
     background: #00b19d;
     background-image: url(logo-alegra-login.png);
     background-position-y: 35px;
     background-position-x: center;
     background-repeat: no-repeat;
+    
     text-align:center;
-    border-radius: 5px;
+    
+    border-radius: 5px; 
 }
 .login input {
     font-size:12px;
@@ -630,7 +729,7 @@ ul {
 	height:35px;
 	margin-bottom:8px;
 	border-radius:3px;
-	background:#008e79;
+	background:#008677;
 	color:#fff;
 	padding:5px 5px 5px 40px;
 	width:157px;
@@ -639,11 +738,11 @@ ul {
 }
 
 #user{
-    background: url(http://alegra.co/diseno/assets-img/usuario-icon.png)#008e79 no-repeat 10px; 
+    background: url(http://alegra.co/diseno/assets-img/usuario-icon.png)#008677 no-repeat 10px; 
     background-size:  auto 60%;
 }
 #password{
-    background: url(http://alegra.co/diseno/assets-img/password-icon.png) #008e79 no-repeat 10px;
+    background: url(http://alegra.co/diseno/assets-img/password-icon.png) #008677 no-repeat 10px;
     background-size: auto 60%;
 }
 #user:focus, #password:focus{
@@ -654,27 +753,7 @@ ul {
     margin: auto;
     text-align: center;
     bottom: 0px;
-    color:#fff;
 }
-
-#logIncorrect{
-    /*posición alerta*/
-    position:absolute;
-    left:50%;
-    margin-left:-115px;
-    top:271px;
-    width:230px;
-    
-    background:#e96f53;
-    
-    font-size:11px;
-    font-weight:bold;
-    line-heigh:100%;
-    padding-top:8px;
-
-    border-radius:8px 8px 0px 0px;
-}
-
 #logout{
     color: white;
     font-size: 12px;
