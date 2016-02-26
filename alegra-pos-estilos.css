@@ -1,0 +1,717 @@
+html, body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*limpiar formularios*/
+
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border:none;
+}
+*:focus {
+    outline: none;
+}
+
+.margen {
+    display: inline-block;
+    position: absolute;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 100px;
+    min-height: 100%;
+    margin-right: 1px;
+    background-color: #424242;
+}
+.margen ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+    font-size: 0;
+} 
+.margen li{
+    display: inline-block;
+    color: #000;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    width: 100%;
+    height: 100px;
+}
+.PosBtn {
+    background-color: #3f918a;
+    background-image: url('negocio.png');
+    background-repeat: no-repeat;
+    background-size: 65px;
+    background-position: center;
+    display:inline-block;
+    cursor:pointer;
+}
+.grafBtn{
+    background-color: #00b796;
+    background-image: url('informes.png');
+    background-repeat: no-repeat;
+    background-size: 65px;
+    background-position: center;
+    display:inline-block;
+    cursor:pointer;
+}
+.configBtn{
+    background-color: #00b796;
+    background-image: url('configuracion.png');
+    background-repeat: no-repeat;
+    background-size: 65px;
+    background-position:  center;
+    display:inline-block;
+    cursor:pointer;
+}
+.PosBtn:hover, .configBtn:hover, .grafBtn:hover{
+    background-color: #bed03b; 
+}
+h1{
+    font-size:24px;
+    font-weight:normal;
+    color:#B5B5B5;
+    text-transform: uppercase;
+}
+#configDiv{
+    top:10%;
+    left:20%;
+    right: 20%;
+    display:none;
+    position:fixed;
+    z-index: 9002;
+    background-color:#fff;
+    padding: 10px 50px;
+    overflow-y: scroll;
+}
+#confBankPopUp select {
+    padding: 1px;
+    height: 20px;  
+}
+.topProduct{
+    display: inline-block;
+    position: absolute;
+    float: top;
+    top:0;
+    left: 100px;
+    //height: 30%;
+    width: 60%;
+    padding: 10px 10px;
+}
+.producto {
+    display: inline-block;
+    position:absolute;
+    float: left;
+    left: 100px;
+    top: 200px;
+    width: 60%;
+    padding: 10px 10px;
+    margin-right: 1px ;
+    font-size: large;
+    height: 100%;
+    overflow-y: auto;
+}	
+table{
+    position: relative;
+    color: darkgrey;
+    border-collapse: collapse;
+    max-width: 90%;
+    border: 1px solid darkgrey;
+    border-top: none;
+    margin-left: 4%;
+    margin-right: 5%;
+    overflow-y: scroll;
+}
+tbody{
+    overflow-y: scroll;
+    max-height: 50px;
+}
+th, td{
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid darkgrey;
+    font-size: large;
+}
+tr:hover{background-color: #3f918a}
+#ventasAnteriores{
+    display: none;    
+    position:relative;
+    float: top;
+    border: 2px solid black;
+    width: 65%;
+    height: 90%;
+    padding: 10px 10px;
+    margin-right: 1px ;
+}
+.cantInTicket{
+    font-weight: bold;
+    color: black;
+    border-left: 1px solid darkgrey;
+} 
+.itemsInTicket{
+    text-align: left;
+}
+.priceInTicket{
+    text-align: right;
+}
+.prodTitle{
+    border-left: 1px solid  #3f918a;
+    border-top: 1px solid #3f918a;
+    text-align: left;
+    width: 60%;
+} 
+.cantTitle{
+    border-right: 1px solid  #3f918a;
+    border-left: 1px solid  #3f918a;
+    border-top: 1px solid #3f918a;
+}
+.priceTitle{
+    color: black;
+    font-weight: bold;
+    border-left: 1px solid  #3f918a;
+    border-top: 1px solid #3f918a;
+    width: 30%;
+}
+.ticket {
+    display: inline-block;
+    position:absolute;
+    float: right;
+    left: 72%;
+    top: 0px;
+    height: 100%;
+    border-left: 1px solid #90909a;
+    width: 30%;
+    font-size: large;
+    overflow-x: hidden; 
+}
+#TicketProd {
+    display: block;
+    //position: relative;
+    //height: 100px;
+    //top: 25px;
+    overflow-y: scroll; 
+}
+#taxes {
+    float: right;
+    display: block;
+    color:  #58595f;
+}
+#ticketTotal {
+    display: block;
+    position: absolute;
+    height: 515px;
+    width: 100%;
+    bottom: 5px;
+}
+#ticketTitle {
+    display: block;
+    color: white;
+    margin: 0;
+    text-align: center;
+    background-color: #424242;
+    padding: 5px 5px;
+    font-weight: bold;
+    font-size: large;
+}
+.search {
+    display: block;
+    position: relative;
+    bottom: 20%;
+}
+.search input{
+    // display: inline-block;
+    height: 30px;
+    width: 50%;
+    margin-left: 10px;
+    float: left;
+    //    margin:0;
+    //	width:300px;
+    background:#e5f3f0;
+    padding:5px;
+    border-radius:4px 0 0 4px;
+    font-size:13px;
+    color:#666;
+    display:block;
+    border: none;
+}
+#addClient{
+    margin: 5px;
+    background-color: #008677; 
+    text-transform: uppercase;
+    color: white;
+    width: 110px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#searchbtn {
+    /*    background-image: url('searchBtn.png');
+        border: none;
+        margin-left: 0px;
+        background-size: 100% 100%;
+        position: relative;
+        display:inline;
+        height: 25px;
+        width: 30px; */
+    border: none;
+    display:block;
+    float:left;
+    margin:0 0 0 -5px;
+    width:40px;
+    height:40px;
+    padding:5px;
+    font-size:13px;
+    background:url(busqueda.png) no-repeat center #008677;
+    background-size:60%;
+    border-radius:0 8px 8px 0;
+
+}
+
+#newClient{
+    // top: 10%;
+    left: 20%;
+    // right: 30%;
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #BFBFBF;
+    border-radius: 4px;
+    padding: 30px;
+}
+#newClient h1{
+    font-size:16px;
+    font-weight:bold;
+    color:#00b19d;
+    text-transform:uppercase;
+    margin:0;
+}
+#newClient label {
+    display:inline-block;
+
+    height:37px;
+    //float:left;
+
+    width:89px;
+    //padding:11px 10px 10px 10px;
+    border-top:1px solid;
+    border-bottom:1px solid;
+    border-left:1px solid;
+    border-color:#BFBFBF;
+    border-radius:4px 0 0 4px;
+}
+#clientName, #clientId, #clientAddress, #clientCity, #clientEmail, #clientPhone  {
+
+    //float:right;
+    background:#e5f3f0;
+    width:219px;
+    //padding:10px 10px;
+    //margin-bottom:10px;
+    height: 30px;
+    border-top:1px solid;
+    border-bottom:1px solid;
+    border-right:1px solid;
+    border-color:#BFBFBF;
+    border-radius:0 4px 4px 0; 
+}
+ul {
+    list-style: none;
+}
+#topProductMenu ul{
+    margin: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 0;
+    list-style: none;
+    /*width: 60%;*/
+    background:  #c2f9d8;
+    float: left;
+}
+#topProductMenu li{
+    font-size: larger;
+    color: black;
+    display: block;
+    padding: 0 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    float: left;
+    line-height: 100%;
+    text-decoration: none;
+}
+#topProductMenu li.active  {
+    background: #3f918a;
+    float: left;
+    color: white;     
+}
+.editBtn{
+    font-size: 15px;
+    padding: 10px 10px;
+    width: 70%;
+    margin: 5px;
+}
+/*#TicketProd{
+    overflow-y: scroll;
+    top: 0px;
+   
+}
+#ticketTotal{
+   // height: 30%;
+   position: absolute;
+    bottom: 0px;
+}*/
+#descuentoTotalP {
+    font-size: larger;
+    color: #58595f;
+    display: inline-block;
+    padding-left: 30%; 
+    padding-right: 10px;
+    padding-top: 10%;
+}
+#descuentoTotalNum {
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    height: 40px;
+}
+#off {
+    padding-top: 15px;
+    border-top: 3px solid #bde3dc; 
+    margin-top: 40px; /* SE ELIMINA CUNADO ESTE HABILITADO DESCUENTO*/
+}
+.total p {
+    position: relative;
+    display: inline-block;
+    left:60%;
+    color:  #58595f;
+    margin: 0px;
+    //margin-left: 5%;
+} 
+#subtot{
+    margin-right: 10%;
+}
+#totalNoDcto, #totalDct, #subtotal {
+    display: block;
+    position: absolute;
+}
+
+.total {
+    position: relative;
+    display: block;
+    float: bottom;
+    width: 90%;   
+}
+#divTotalTitle {
+    position: relative;
+    display: block;
+    margin-left: 25px;
+    margin-top: 45px; 
+    border-bottom: 2px solid #90909a; 
+}
+#totalTitle {
+    position: absolute;
+    display: block;
+    font-weight: lighter; 
+    float: left;
+    color: #424242;
+    margin-left: -55%;
+    font-size: 25px;
+}
+#totalNum{
+    font-size: 56px;
+    font-weight:  bolder;
+    color: #424242;
+    float: left;
+    margin-left: 5%;
+    margin-top: 15px;
+    position: initial;
+}
+.producto p {
+    display: inline-block;
+    border: 1px solid #BFBFBF;
+    margin: 10px 10px 10px 10px;
+    color: #58595f;
+    padding-top: 10px;
+    height: 100px;
+    width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+}
+#editPopUp {
+    max-width: 900px;
+    min-width: 250px;
+    opacity: 1.0;
+    top:30%;
+    left:20%;
+    display:none;
+    position:fixed;
+    background-color: rgba(255,255,255, 0.7);
+    padding: 10px 50px 6px 50px;
+    box-shadow: 1px 1px 9px #ccc;
+}
+#editarVenta{
+    color:  #3f918a;
+    font-size: larger;
+    text-align: center;
+}
+#closeBtn {
+    //background-image: url('X.png');
+    background-repeat:  no-repeat;
+    background-color: #00b796;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: -1px;
+    background-size: 100% 100%;		
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+}
+#eliminarVenta, .closeBtn{
+    background-color: #bf5037;
+    //background-image: url('eliminarProd.png');
+    border: none;
+    margin-left: 40%;
+    background-size: 100% 100%;
+    height: 40px;
+    width: 155px; 
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+#name{
+    height: 40px;
+    font-size: large;
+    position: relative;
+    top: 50%;
+    margin-left: 45px;
+    padding-right: 5px;    
+} 
+#price, #amount, #tax, #descuentoItem {
+    height: 40px;
+    font-size: large;
+    position: relative;
+    top: 50%;
+    padding-right: 5px; 
+    cursor: pointer;
+}
+#submitBtn {
+    background-image: url('checkMark.png');
+    background-repeat: no-repeat;
+    border: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    margin: auto;
+    background-size: 100% 100%;		
+    height: 40px;
+    width: 40px;  
+    cursor: pointer;
+}
+#cancelSaleBtn, #cancelBtn, #closeClient, .printBtn {
+    // background-image: url('cancelarBtn.png');
+    background-color: #bf5037;
+    border: none;
+    background-size: 100% 100%;
+    display:inline-block;
+    cursor:pointer;
+    margin-left: 7%; 
+    height: 40px;
+    width: 40%;  
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#payPopUp {
+    top:30%;
+    left:30%;
+    right: 40%;    
+    display:none;
+    position:fixed;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+}
+#payConfirmPopUp{
+    top:20%;
+    left:30%;
+    right: 30%;
+    display:none;
+    position:fixed;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+    text-align: left;
+    overflow: scroll;
+}
+#noInvoiceId{
+    top:30%;
+    left:30%;
+    right: 40%;    
+    display:none;
+    position:fixed;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+}
+#Sync {
+    float: right;
+}
+#consultarAnteriores{
+    float: right;   
+}
+#openPopUp{
+    top:40%;
+    left:40%;
+    right: 40%;
+    display:none;
+    position:fixed;
+    z-index: 9002;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+}
+#closePopUp {
+    top:40%;
+    left:40%;
+    right: 40%;
+    display:none;
+    position:fixed;
+    z-index: 9002;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+}
+#returnsPopUp{
+    top:40%;
+    left:40%;
+    right: 40%;
+    display:none;
+    position:fixed;
+    z-index: 9002;
+    background-color:#fff;
+    padding: 10px 50px;
+    border: 1px solid black;
+}
+.login{
+    display: none;
+    z-index: 1;
+
+    position:absolute;
+    width: 250px;
+    height: 160px;
+    left:50%;
+    top:50%;
+    margin-top:-134px;
+    margin-left:-125px;
+    padding: 110px 30px 30px 30px;
+
+    background: #00b19d;
+    background-image: url(logo-alegra-login.png);
+    background-position-y: 35px;
+    background-position-x: center;
+    background-repeat: no-repeat;
+
+    text-align:center;
+
+    border-radius: 5px; 
+}
+.login input {
+    font-size:12px;
+    border:none;
+
+    height:35px;
+    margin-bottom:8px;
+    border-radius:3px;
+    background:#008677;
+    color:#fff;
+    padding:5px 5px 5px 40px;
+    width:157px;
+    transition:all .3s;
+
+}
+
+#user{
+    background: url(http://alegra.co/diseno/assets-img/usuario-icon.png)#008677 no-repeat 10px; 
+    background-size:  auto 60%;
+}
+#password{
+    background: url(http://alegra.co/diseno/assets-img/password-icon.png) #008677 no-repeat 10px;
+    background-size: auto 60%;
+}
+#user:focus, #password:focus{
+    background-color:#00525d;
+    color:#becc30;
+}
+.login p{
+    margin: auto;
+    text-align: center;
+    bottom: 0px;
+}
+#logout{
+    color: white;
+    font-size: 12px;
+    font-weight: lighter;
+    position: absolute;
+    bottom: 3px;
+    right: 35px;
+    cursor:  pointer;
+}
+#autenticar {
+    border:none;
+    background:#58595f;
+    width:202px;
+    padding:5px;
+    height:40px;
+    border-radius:3px;
+    font-weight:bold;
+    font-size:14px;
+    color:#fff;
+    border-radius:4px;
+    cursor: pointer;
+    transition:all .3s;
+}
+#autenticar:hover{
+    background:#becc30;
+}
+.payBtn, .autenticarBtn, #submitClient, #closeConfig {
+    background-color: #00b796;
+    //background-image: url('venderBtn.png');
+    border: none;
+    background-size: 100% 100%;
+    display:inline-block;
+    cursor:pointer;
+    margin-right: 7%; 
+    height: 40px;
+    width: 40%; 
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+}
+
+//#autenticar:hover{background-color: #bed03b}
+.POS {
+    opacity: 0;
+}
